@@ -1,0 +1,53 @@
+<html>
+	<head>
+		<title>Monitoring view</title>
+		<style type="text/css">
+			p{
+				line-height: 0;
+			}
+			div.top{
+				width: 100%;
+				height: 98%;
+				margin-bottom: 0.5em;
+				background-color: #ffffff;
+				color: #000000;
+			}
+			div.pict{
+				width: 50%;
+				height: 100% ;
+				float: left;
+			}	
+			div.top_bar{
+				width: 100% ;
+				height: 2%;
+				font-size: 100%;
+				background-color: #b0c4de;
+			}
+			
+			div.top_bar_both{
+				width: 49%;
+				float: left;
+			}
+
+			img{
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="top_bar">
+			<div class="top_bar_both">Stream 0</div>
+			<div class="top_bar_both">Stream 1</div>
+		</div>
+		<div class="top">
+			<div class="pict">
+				<img src="{{ url_for('video_feed', num=3) }}">
+			</div>
+			<div class = "pict">
+				<img src="{{ url_for('video_feed', num=4) }}">
+			</div>
+		</div>
+	</body>
+</html>
+

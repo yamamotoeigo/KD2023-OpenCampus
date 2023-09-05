@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+  <title>Choose video num</title>
+</head>
+<body>
+  <div class="centering"> 
+    <h1>Please choose video num</h1>
+      <form action="minato3" method=post name="movie_num" enctype=multipart/form-data>
+        <input type=text name=num id="num">
+        <input type=submit value=determin onClick="return check();">
+      </form>
+  </div>
+  <script type="text/javascript">
+    function check(){
+        if(movie_num.num.value == "" || movie_num.num.value <= 0) {
+            alert("自然数を入力してください！");
+            return false;
+        }else {
+            return true;
+        }
+    }
+</script>
+</body>

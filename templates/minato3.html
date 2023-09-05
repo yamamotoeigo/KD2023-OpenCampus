@@ -1,0 +1,68 @@
+<html>
+	<head>
+		<title>Monitoring view</title>
+		<style type="text/css">
+			p{
+				line-height: 0;
+			}
+			div.top{
+				width: 100%;
+				height: 98%;
+				margin-bottom: 0.5em;
+				background-color: #ffffff;
+				color: #000000;
+			}
+			div.pict{
+				float: left;
+				width: {{parameters["pict_width"]}}%;
+				height: {{parameters["pict_height"]}}%;
+				
+				/*
+				width: 24%;
+				height: 33%;
+				*/
+				/*display: flex;*/
+			}
+			div.top_bar{
+				width: 100% ;
+				height: 2%;
+				font-size: 100%;
+				background-color: #b0c4de;
+			}
+			
+			div.top_bar_both{
+				width: 33%;
+				float: left;
+			}
+
+			img{
+				width: 100%;
+				height: 100%;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div class=top_bar>
+			<!--
+			<div class="top_bar_both">Stream 3</div>
+		        -->
+		</div>
+		
+		<div class="top">
+			<div class="pict" name="image_field">
+				<img id=image_place src="{{ url_for('video_feed', num=0) }}">
+				<img id=image_place src="{{ url_for('video_feed', num=1) }}">
+				<img id=image_place src="{{ url_for('video_feed', num=2) }}">
+				<img id=image_place src="{{ url_for('video_feed', num=3) }}">
+				<img id=image_place src="{{ url_for('video_feed', num=4) }}">
+			</div>
+		</div>
+	</body>
+	<!--
+	<script>
+		document.getElementById("image_place").classList.add()
+	</script>
+	-->
+</html>
+

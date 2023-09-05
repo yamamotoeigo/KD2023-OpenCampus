@@ -1,0 +1,329 @@
+<html>
+	<head>
+		<title>Monitoring view</title>
+		<style type="text/css">
+			@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+			p{
+				line-height: 0;
+				font-family: 'DotGothic16', sans-serif !important;
+			}
+
+			h2 {
+				font-size: 40px;
+				font-family: 'DotGothic16', sans-serif !important;
+				font-weight: normal;
+				position: relative;
+				padding: 1rem 2rem;
+				border-bottom: 3px solid #000;
+				border-left: 3px solid #000;
+				border-radius: 0 0 0 20px;
+			}
+			h2:before {
+				position: absolute;
+				right: 50px;
+				bottom: -21px;
+				width: 0;
+				height: 0;
+				content: '';
+				border-width: 21px 21px 0 0;
+				border-style: solid;
+				border-color: #000 transparent transparent transparent;
+			}
+			h2:after {
+				position: absolute;
+				right: 54px;
+				bottom: -14px;
+				width: 0;
+				height: 0;
+				content: '';
+				border-width: 14px 14px 0 0;
+				border-style: solid;
+				border-color: #fff transparent transparent transparent;
+			}
+			h2 span:nth-child(1) { 
+				color: #000000; 
+				padding-left: 18px;
+				font-size: 25px;
+				font-family: 'DotGothic16', sans-serif !important;
+			}
+
+			h3 {
+				position: relative;
+				padding: 0.8rem 2rem;
+				font-size: 20px;
+				font-weight: normal;
+				text-align: center;
+				color: #ff0000;
+				border: 2px solid #000000;
+				font-family: 'DotGothic16', sans-serif !important;
+			}
+			h3:before {
+				font-size: 20px;
+				font-size: 1rem;
+				position: absolute;
+				top: -24px;
+				left: -3px;
+				height: 24px;
+				padding: 0 1em;
+				content: 'POINT';
+				color: #fff;
+				background: #000;
+			}
+
+
+			.profile-solid.icon {
+				color: #ffd900;
+				position: absolute;
+				margin-left: 150px;
+				margin-top: 2px;
+				width: 28px;
+				height: 12px;
+				border-left: solid 1px currentColor;
+				border-right: solid 1px currentColor;
+				border-top: solid 1px currentColor;
+				border-bottom: solid 1px transparent;
+				background-color: currentColor;
+				border-radius: 12px 12px 0 0;
+			}
+			.profile-solid.icon:before {
+				content: '';
+				position: absolute;
+				left: 5px;
+				top: -16px;
+				width: 16px;
+				height: 16px;
+				border-radius: 50%;
+				border: solid 1px currentColor;
+				background-color: currentColor;
+			}
+
+			.profile-solid2.icon {
+				color: blue;
+				position: absolute;
+				margin-left: 410px;
+				margin-top: 2px;
+				width: 28px;
+				height: 12px;
+				border-left: solid 1px currentColor;
+				border-right: solid 1px currentColor;
+				border-top: solid 1px currentColor;
+				border-bottom: solid 1px transparent;
+				background-color: currentColor;
+				border-radius: 12px 12px 0 0;
+			}
+			.profile-solid2.icon:before {
+				content: '';
+				position: absolute;
+				left: 5px;
+				top: -16px;
+				width: 16px;
+				height: 16px;
+				border-radius: 50%;
+				border: solid 1px currentColor;
+				background-color: currentColor;
+			}
+			
+
+			.profile-solid3.icon {
+				color: hwb(278 0% 0%);
+				position: absolute;
+				margin-left: 670px;
+				margin-top: 2px;
+				width: 28px;
+				height: 12px;
+				border-left: solid 1px currentColor;
+				border-right: solid 1px currentColor;
+				border-top: solid 1px currentColor;
+				border-bottom: solid 1px transparent;
+				background-color: currentColor;
+				border-radius: 12px 12px 0 0;
+			}
+			.profile-solid3.icon:before {
+				content: '';
+				position: absolute;
+				left: 5px;
+				top: -16px;
+				width: 16px;
+				height: 16px;
+				border-radius: 50%;
+				border: solid 1px currentColor;
+				background-color: currentColor;
+			}
+
+			.item-list{
+				color: #232323;
+				font-size: 20px;
+				font-family: 'DotGothic16', sans-serif !important;
+				display: flex;
+				justify-content: center; /* 中央寄せ */
+				position: absolute;
+				top: 15px;
+				width: 100%;
+				{% comment %} margin-left: 0px {% endcomment %}
+			}
+			.item-list .item{
+				/* position: relative; */
+				box-sizing: border-box;
+				padding: 0px 20px;  
+				padding-left: 0px;
+				padding-right: 35px;
+				width: 100%;
+			}
+			.item-list span:nth-child(1) {
+				font-size: 17px;
+				width: 100%;
+			}
+
+			div.icon_design {
+				position: relative;
+				padding: 2rem 2rem;
+				border-top: 3px dotted #000;
+				border-bottom: 3px dotted #000;
+				transform: translate(0,-270px);
+			}
+			div.icons {
+				position: absolute;
+				top: 50%;
+				left: 7%;
+			}
+			
+
+
+			div.top{
+				width: 100%;
+				height: 98%;
+				margin-bottom: 0.5em;
+				background-color: #ffffff;
+				color: hsl(0, 0%, 0%);
+			}
+			div.pict_left{
+				width: 40%;
+				height: 50% ;
+				float: left;
+				position: relative;
+				top: 0px;
+  				left: 50px;
+			}	
+			div.pict_right{
+				width: 40%;
+				height: 50% ;
+				float: left;
+				position: relative;
+				top: 0px;
+  				left: 150px;
+			}	
+			
+			div.top_bar_both{
+				width: 49%;
+				float: left;
+				position: relative;
+				left: 50px;
+				top: 0px;
+				font-family: 'DotGothic16', sans-serif !important;
+			}
+
+			img{
+				width: 100%;
+				height: 100%;
+			}
+			/* div.explanation{
+				width: 10%;
+				height: 10%;
+			} */
+
+			body{
+				font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+			}
+
+			.square-yellow {
+				width: 30px;
+				border: 5px solid #ffd900;
+				background-color: transparent;
+			}
+			.square-yellow::before {
+				content: "";
+				display: flex;
+				padding-top: 100%;
+			}
+
+			.square-blue {
+				width: 30px;
+				border: 5px solid #0000ff;
+				background-color: transparent;
+			}
+			.square-blue::before {
+				content: "";
+				display: flex;
+				padding-top: 100%;
+			}
+
+			.square-purple {
+				width: 30px;
+				border: 5px solid #a100ff;
+				background-color: transparent;
+			}
+			.square-purple::before {
+				content: "";
+				display: flex;
+				padding-top: 100%;
+			}
+			
+			.icon-text-group {
+				display: flex;
+				align-items: center; /* アイコンとテキストを縦方向に中央揃え */
+				gap: 10px; /* アイコンとテキストの間隔 */
+			  }
+
+			.make-padding {
+				font-size: 18px;
+				align-items: center;
+				justify-content: left;
+				display: flex;
+				padding-right: 25px;
+				margin-left: 0px;
+			}
+			
+
+		</style>
+	</head>
+	<body>
+		<h2>リアルタイム物体検出 <span>大規模情報処理システム研究室</span></h2>
+
+		<h3>物体の数に応じて、'速度'や'精度'の異なる、検出技術を自動調整！</h3>
+		<!--
+		<div class="top_bar_both">カメラ 1</div>
+		<div class="top_bar_both">カメラ 2</div>
+		-->
+		<div class="top">
+			<div class="pict_left">
+				<p>カメラ1</p>
+				<img src="{{ url_for('video_feed', num=0) }}">
+			</div>
+	
+			<div class = "pict_right">
+				<p>カメラ2</p>
+				<img src="{{ url_for('video_feed', num=1) }}">
+			</div>
+		</div>
+		<div class="icon_design">
+			<div class="item-list">
+				<div class=make-padding>検出技術の種類！</div>
+				<div class="icon-text-group">
+					<div class="square-yellow"></div>
+					<div class="item"> 高速度, 低精度</div>
+				</div>
+				
+				<div class="icon-text-group">
+					<div class="square-blue"></div>
+					<div class="item"> 中速度, 中精度</div>
+				</div>
+				
+				<div class="icon-text-group">
+					<div class="square-purple"></div>
+					<div class="item"> 低速度, 高精度</div>
+				</div>
+			</div>
+		</div>
+
+	</body>
+</html>
